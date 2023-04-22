@@ -14,6 +14,14 @@ Example:
 docker build -t usersapi:v1 -f UsersApi/Dockerfile .
 ```
 
+### Publish a docker image
+To build a docker image with specific params. Run it on the root project
+```bash
+docker buildx create --name arch-builder --platform linux/arm64,linux/amd64 
+docker buildx use arch-builder 
+docker buildx build --platform linux/arm64,linux/amd64 --push -t raphaelbravo190813/usersapi:v1 -f UsersApi/Dockerfile .
+```
+
 ### List all images
 To list all docker images
 ```bash
@@ -55,7 +63,7 @@ docker-compose down
 Run the following commands on the root folder
 
 ```bash
-docker build -t raphaelbravo190813/usersapi:v2 -f UsersApi/Dockerfile .
-docker build -t raphaelbravo190813/storesapi:v2 -f StoresApi/Dockerfile .
+docker build -t raphaelbravo190813/usersapi:v1 -f UsersApi/Dockerfile .
+docker build -t raphaelbravo190813/storesapi:v1 -f StoresApi/Dockerfile .
 docker-compose up -d
 ```
