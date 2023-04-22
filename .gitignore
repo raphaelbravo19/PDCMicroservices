@@ -1,0 +1,17 @@
+# Server connection
+connection.sh
+
+#
+**/appsettings.json
+**/appsettings.Development.json
+
+# builds
+StoresApi/bin
+UsersApi/bin
+CorePDC/bin
+
+# debug-data
+StoresApi/obj
+UsersApi/obj
+CorePDC/obj
+
