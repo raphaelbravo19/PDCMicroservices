@@ -2,6 +2,7 @@ using CorePDC.Context;
 using Microsoft.EntityFrameworkCore;
 using StoresApi.Interfaces;
 using StoresApi.Services;
+using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<IAlblasaContext, AlblasaContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+builder.Logging.ClearProviders();
+builder.Logging.AddNLog();
 
 var app = builder.Build();
 
