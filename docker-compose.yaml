@@ -1,12 +1,14 @@
 version: "3.7"
 services:
   usersapi:
-    image: raphaelbravo190813/usersapi:v1
+    image: usersapi:v1
     ports:
       - 8080:80
-    # environment:
-    #   EXAMPLE_ENV: default
+    env_file:
+      - .env
   storesapi:
-    image: raphaelbravo190813/storesapi:v1
+    image: storesapi:v1
     ports:
       - 8081:80
+    env_file:
+      - .env
