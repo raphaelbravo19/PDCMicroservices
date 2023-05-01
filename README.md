@@ -63,7 +63,7 @@ docker-compose down
 Run the following commands on the root folder
 
 ```bash
-docker build -t raphaelbravo190813/usersapi:v1 -f UsersApi/Dockerfile .
-docker build -t raphaelbravo190813/storesapi:v1 -f StoresApi/Dockerfile .
+docker build -t usersapi:v1 -f UsersApi/Dockerfile .
+docker build -t storesapi:v1 -f StoresApi/Dockerfile .
 docker-compose up -d
 ```
